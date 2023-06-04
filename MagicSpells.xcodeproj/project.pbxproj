@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		56D1ACFA2A2C022600F5D939 /* MagicSpells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicSpells.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D1ACFA2A2C022600F5D939 /* KeyPair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyPair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56D1ACFF2A2C022600F5D939 /* MagicSpellsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicSpellsApp.swift; sourceTree = "<group>"; };
 		56D1AD012A2C022700F5D939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56D1AD042A2C022700F5D939 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		56D1ACFB2A2C022600F5D939 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				56D1ACFA2A2C022600F5D939 /* MagicSpells.app */,
+				56D1ACFA2A2C022600F5D939 /* KeyPair.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,9 +69,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		56D1ACF92A2C022600F5D939 /* MagicSpells */ = {
+		56D1ACF92A2C022600F5D939 /* KeyPair */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 56D1AD092A2C022700F5D939 /* Build configuration list for PBXNativeTarget "MagicSpells" */;
+			buildConfigurationList = 56D1AD092A2C022700F5D939 /* Build configuration list for PBXNativeTarget "KeyPair" */;
 			buildPhases = (
 				56D1ACF62A2C022600F5D939 /* Sources */,
 				56D1ACF72A2C022600F5D939 /* Frameworks */,
@@ -81,9 +81,9 @@
 			);
 			dependencies = (
 			);
-			name = MagicSpells;
+			name = KeyPair;
 			productName = MagicSpells;
-			productReference = 56D1ACFA2A2C022600F5D939 /* MagicSpells.app */;
+			productReference = 56D1ACFA2A2C022600F5D939 /* KeyPair.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +114,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				56D1ACF92A2C022600F5D939 /* MagicSpells */,
+				56D1ACF92A2C022600F5D939 /* KeyPair */,
 			);
 		};
 /* End PBXProject section */
@@ -270,6 +270,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = KeyPair;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,6 +298,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = KeyPair;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -322,7 +324,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		56D1AD092A2C022700F5D939 /* Build configuration list for PBXNativeTarget "MagicSpells" */ = {
+		56D1AD092A2C022700F5D939 /* Build configuration list for PBXNativeTarget "KeyPair" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				56D1AD0A2A2C022700F5D939 /* Debug */,

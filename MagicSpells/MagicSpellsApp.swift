@@ -13,7 +13,6 @@ struct MagicSpellsApp: App {
         WindowGroup {
             ContentView()
                 .ignoresSafeArea()
-
         }
     }
 }
@@ -25,10 +24,12 @@ struct KeyView: View {
             .font(.title)
             .padding(16)
             .foregroundColor(.white)
+            .frame(width: 64, height: 64)
             .background(RoundedRectangle(cornerRadius: 8)
                 .fill(.black))
             .transition(.opacity)
             .animation(.easeOut)
+            .shadow(radius: 10)
     }
     
     func isSpecialKey() -> Bool {
@@ -56,7 +57,7 @@ struct ContentView: View {
         }
         .animation(.easeInOut(duration: 1))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(VisualEffectView())
+        .background(TranslucentVisualEffectView())
         .onChange(of: state.keyOutput) { newValue in
             if newValue == "" {
                 showingNotice = false
@@ -410,7 +411,7 @@ extension String {
     }
 }
 
-struct VisualEffectView: NSViewRepresentable {
+struct TranslucentVisualEffectView: NSViewRepresentable {
     func makeNSView(context: Context) -> NSVisualEffectView
     {
         let visualEffectView = NSVisualEffectView()
