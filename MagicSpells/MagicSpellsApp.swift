@@ -54,6 +54,15 @@ struct ContentView: View {
                     KeyView(key: key)
                 }
             }
+            
+            if state.requiresAccessibility {
+                VStack {
+                    Text("Please Enable Accessibility for KeyPair")
+                        .font(.title)
+                    
+                    Text("System Settings > Security & Privacy > Accesibiity > Add KeyPair > Restart KeyPair.app")
+                }
+            }
         }
         .animation(.easeInOut(duration: 1))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -71,7 +80,7 @@ struct ContentView: View {
 
 class AppState: ObservableObject, Equatable {
     static let shared = AppState()
-    
+    @Published var requiresAccessibility = true
     @Published var keyOutput = ""
     
     static func == (lhs: AppState, rhs: AppState) -> Bool {
@@ -79,6 +88,7 @@ class AppState: ObservableObject, Equatable {
     }
 }
 
+/// Original implementation from https://github.com/karaggeorge/macos-key-cast/blob/master/Sources/key-cast/KeyCast.swift
 class AppDelegate: NSObject, NSApplicationDelegate {
     let state = AppState.shared
     var eventTap: CFMachPort?
@@ -88,8 +98,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         if !AXIsProcessTrustedWithOptions(["AXTrustedCheckOptionPrompt": true] as CFDictionary) {
-            print("Please enable accessibility permissions")
+            print("Accessibility Required")
+            state.requiresAccessibility = true
         } else {
+            state.requiresAccessibility = false
             listenToGlobalKeyboardEvents()
         }
         
