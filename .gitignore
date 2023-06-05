@@ -1,4 +1,5 @@
 ./Distribution/KeyPair.app
 ./Distribution/KeyPair.dmg
 
-xcuserdata/
+xcuserdata/KeyPair.dmg
+.DS_Store
