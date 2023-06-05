@@ -59,7 +59,6 @@ struct ContentView: View {
                 VStack {
                     Text("Please Enable Accessibility for KeyPair")
                         .font(.title)
-                    
                     Text("System Settings > Security & Privacy > Accesibiity > Add KeyPair > Restart KeyPair.app")
                 }
             }
@@ -115,8 +114,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             window.standardWindowButton(.zoomButton)?.isHidden = true
             
             window.isMovableByWindowBackground = true
-            window.level = NSWindow.Level.floating
-            // window.styleMask.remove(.resizable)
+            window.level = NSWindow.Level.screenSaver
         }
     }
     
