@@ -55,18 +55,30 @@ struct ContentView: View {
                     KeyView(key: key)
                 }
             }
-            
+
             if state.requiresAccessibility {
                 VStack {
                     Text("Please Enable Accessibility for KeyPair")
                         .font(.title)
-                    Text("System Settings > Security & Privacy > Accesibiity > Add KeyPair > Restart KeyPair.app")
+                    Text("System `Settings > Security & Privacy > Accesibiity > Add KeyPair`, then Restart KeyPair.app")
                 }
             }
         }
         .animation(.easeInOut(duration: 1))
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(TranslucentVisualEffectView())
+        .toolbar {
+            Spacer()
+            Image(systemName: state.isPinned ? "circlebadge.fill" : "circlebadge")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 8, height: 8)
+                .foregroundColor(Color("KeyTextColor").opacity(0.5))
+                .onTapGesture {
+                    state.isPinned.toggle()
+                }
+                .offset(y: -8)
+        }
         .onChange(of: state.keyOutput) { newValue in
             if newValue == "" {
                 showingNotice = false
@@ -75,16 +87,37 @@ struct ContentView: View {
                 showingNotice = true
             }
         }
+        .onChange(of: state.isPinned) { newValue in
+            if let window = NSApplication.shared.windows.first {
+                if state.isPinned {
+                    window.level = NSWindow.Level.screenSaver
+                } else {
+                    window.level = NSWindow.Level.normal
+                }
+            }
+        }
     }
+}
+
+
+enum SettingsKeys: String, CaseIterable{
+    case isPinned = "isPinned"
 }
 
 class AppState: ObservableObject, Equatable {
     static let shared = AppState()
     @Published var requiresAccessibility = true
     @Published var keyOutput = ""
-    
+    static let DEFAULT_IS_PINNED_STATE = true
+
     static func == (lhs: AppState, rhs: AppState) -> Bool {
         return lhs.keyOutput == rhs.keyOutput
+    }
+    
+    @AppStorage(SettingsKeys.isPinned.rawValue) var isPinned = AppState.DEFAULT_IS_PINNED_STATE {
+        didSet {
+            objectWillChange.send()
+        }
     }
 }
 
@@ -115,7 +148,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             window.standardWindowButton(.zoomButton)?.isHidden = true
             
             window.isMovableByWindowBackground = true
-            window.level = NSWindow.Level.screenSaver
+            if state.isPinned {
+                window.level = NSWindow.Level.screenSaver
+            } else {
+                window.level = NSWindow.Level.normal
+            }
         }
     }
     
