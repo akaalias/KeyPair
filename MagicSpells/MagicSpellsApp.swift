@@ -12,6 +12,7 @@ struct MagicSpellsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .frame(minWidth: 400, minHeight: 100)
                 .ignoresSafeArea()
         }
     }
@@ -23,10 +24,10 @@ struct KeyView: View {
         Text(key)
             .font(.title)
             .padding(16)
-            .foregroundColor(.white)
+            .foregroundColor(Color("KeyTextColor"))
             .frame(width: 64, height: 64)
             .background(RoundedRectangle(cornerRadius: 8)
-                .fill(.black))
+                .fill(Color("KeyColor")))
             .transition(.opacity)
             .animation(.easeOut)
             .shadow(radius: 10)
