@@ -29,7 +29,7 @@ struct KeyView: View {
             .background(RoundedRectangle(cornerRadius: 8)
                 .fill(Color("KeyColor")))
             .transition(.opacity)
-            .animation(.easeOut)
+            .animation(.easeOut(duration: 0.5))
             .shadow(radius: 10)
     }
     
@@ -126,7 +126,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let state = AppState.shared
     var eventTap: CFMachPort?
     weak var timer: Timer?
-    let delay: Double = 2.0
+    let delay: Double = 0.7
     let keyCombinationsOnly: Bool = true
     
     func applicationDidFinishLaunching(_ notification: Notification) {
