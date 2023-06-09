@@ -80,6 +80,7 @@ struct ContentView: View {
                     Text("Please Enable Accessibility for KeyPair")
                         .font(.title)
                     Text("System `Settings > Security & Privacy > Accesibiity > Add KeyPair`, then Restart KeyPair.app")
+                        .multilineTextAlignment(.center)
                 }
             }
         }
