@@ -11,7 +11,7 @@ From simple things like Command-C/Command-V for copy and paste to complex comman
 
 ## Demo
 
-![KeyPairDemo.gif](./KeyPairDemo.gif)
+![KeyPairDemo.gif](./KeyPairEmacs.gif)
 
 ## Reference and License
 - The main global key monitor that works with Accessibility _and_ keeping the Sandbox intact for notarization by Apple was developed by @karaggeorge in their [key-cast](https://github.com/karaggeorge/macos-key-cast/blob/master/Sources/key-cast/KeyCast.swift) project. As their project is MIT licensed (and their code does the heavy-lifting here), this project is also MIT licensed and public.
