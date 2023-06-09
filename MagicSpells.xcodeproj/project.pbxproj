@@ -10,6 +10,10 @@
 		56D1AD002A2C022600F5D939 /* MagicSpellsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1ACFF2A2C022600F5D939 /* MagicSpellsApp.swift */; };
 		56D1AD022A2C022700F5D939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D1AD012A2C022700F5D939 /* Assets.xcassets */; };
 		56D1AD052A2C022700F5D939 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56D1AD042A2C022700F5D939 /* Preview Assets.xcassets */; };
+		56EF36062A333C8500634FF0 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 56EF36052A333C8500634FF0 /* Sparkle */; };
+		56EF36082A333C9300634FF0 /* Updater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF36072A333C9300634FF0 /* Updater.swift */; };
+		56EF360A2A333CBD00634FF0 /* KeyPair-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56EF36092A333CA000634FF0 /* KeyPair-Info.plist */; };
+		56EF360C2A333CD300634FF0 /* AboutSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF360B2A333CD300634FF0 /* AboutSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +22,9 @@
 		56D1AD012A2C022700F5D939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56D1AD042A2C022700F5D939 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		56D1AD062A2C022700F5D939 /* MagicSpells.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MagicSpells.entitlements; sourceTree = "<group>"; };
+		56EF36072A333C9300634FF0 /* Updater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updater.swift; sourceTree = "<group>"; };
+		56EF36092A333CA000634FF0 /* KeyPair-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "KeyPair-Info.plist"; sourceTree = "<group>"; };
+		56EF360B2A333CD300634FF0 /* AboutSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EF36062A333C8500634FF0 /* Sparkle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +42,7 @@
 		56D1ACF12A2C022600F5D939 = {
 			isa = PBXGroup;
 			children = (
+				56EF36092A333CA000634FF0 /* KeyPair-Info.plist */,
 				56D1ACFC2A2C022600F5D939 /* MagicSpells */,
 				56D1ACFB2A2C022600F5D939 /* Products */,
 			);
@@ -50,6 +59,8 @@
 		56D1ACFC2A2C022600F5D939 /* MagicSpells */ = {
 			isa = PBXGroup;
 			children = (
+				56EF36072A333C9300634FF0 /* Updater.swift */,
+				56EF360B2A333CD300634FF0 /* AboutSettingsView.swift */,
 				56D1ACFF2A2C022600F5D939 /* MagicSpellsApp.swift */,
 				56D1AD012A2C022700F5D939 /* Assets.xcassets */,
 				56D1AD062A2C022700F5D939 /* MagicSpells.entitlements */,
@@ -82,6 +93,9 @@
 			dependencies = (
 			);
 			name = KeyPair;
+			packageProductDependencies = (
+				56EF36052A333C8500634FF0 /* Sparkle */,
+			);
 			productName = MagicSpells;
 			productReference = 56D1ACFA2A2C022600F5D939 /* KeyPair.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 56D1ACF12A2C022600F5D939;
+			packageReferences = (
+				56EF36042A333C8500634FF0 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			productRefGroup = 56D1ACFB2A2C022600F5D939 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -124,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EF360A2A333CBD00634FF0 /* KeyPair-Info.plist in Resources */,
 				56D1AD052A2C022700F5D939 /* Preview Assets.xcassets in Resources */,
 				56D1AD022A2C022700F5D939 /* Assets.xcassets in Resources */,
 			);
@@ -136,7 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EF360C2A333CD300634FF0 /* AboutSettingsView.swift in Sources */,
 				56D1AD002A2C022600F5D939 /* MagicSpellsApp.swift in Sources */,
+				56EF36082A333C9300634FF0 /* Updater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +290,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "KeyPair-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = KeyPair;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -298,6 +319,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "KeyPair-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = KeyPair;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		56EF36042A333C8500634FF0 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				branch = 2.x;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56EF36052A333C8500634FF0 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56EF36042A333C8500634FF0 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 56D1ACF22A2C022600F5D939 /* Project object */;
 }

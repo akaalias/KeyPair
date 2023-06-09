@@ -6,14 +6,31 @@
 //
 
 import SwiftUI
+import Sparkle
 
 @main
 struct MagicSpellsApp: App {
+    private let updaterController: SPUStandardUpdaterController
+    
+    init() {
+        updaterController = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .frame(minWidth: 400, minHeight: 100)
                 .ignoresSafeArea()
+        }
+        
+        Settings {
+            TabView {
+                
+                UpdaterSettingsView(updater: updaterController.updater)
+                    .tabItem {
+                        Label("Updates", systemImage: "arrow.clockwise")
+                    }
+            }
         }
     }
 }
@@ -47,7 +64,7 @@ struct ContentView: View {
     @ObservedObject var state = AppState.shared
     @State var keys: [String.SubSequence] = []
     @State private var showingNotice = true
-
+    
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             if showingNotice {
@@ -55,7 +72,7 @@ struct ContentView: View {
                     KeyView(key: key)
                 }
             }
-
+            
             if state.requiresAccessibility {
                 VStack {
                     Text("Please Enable Accessibility for KeyPair")
@@ -109,7 +126,7 @@ class AppState: ObservableObject, Equatable {
     @Published var requiresAccessibility = true
     @Published var keyOutput = ""
     static let DEFAULT_IS_PINNED_STATE = true
-
+    
     static func == (lhs: AppState, rhs: AppState) -> Bool {
         return lhs.keyOutput == rhs.keyOutput
     }
