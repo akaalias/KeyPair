@@ -31,6 +31,8 @@ struct MagicSpellsApp: App {
                         Label("Updates", systemImage: "arrow.clockwise")
                     }
             }
+            .padding()
+            .frame(width: 400, height: 200)
         }
     }
 }
