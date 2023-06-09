@@ -40,7 +40,7 @@ echo ""
 echo ""
 echo "Cleaning up:"
 echo ""
-./cleanup.sh 
+# ./cleanup.sh 
 
 echo "Committing latest Appcast to Github:"
 echo ""
