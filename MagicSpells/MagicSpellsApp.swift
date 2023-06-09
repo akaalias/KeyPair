@@ -79,8 +79,9 @@ struct ContentView: View {
                 VStack {
                     Text("Please Enable Accessibility for KeyPair")
                         .font(.title)
-                    Text("System `Settings > Security & Privacy > Accesibiity > Add KeyPair`, then Restart KeyPair.app")
-                        .multilineTextAlignment(.center)
+                    Text("Open System Settings > Security & Privacy > Accessibility")
+                    Text("Then Add KeyPair")
+                    Text("Finally, restart the app")
                 }
             }
         }
