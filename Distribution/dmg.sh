@@ -2,4 +2,4 @@
 
 set -e
 
-hdiutil create -volname $APPNAME -srcfolder $APPBUNDLE -ov -format UDZO ../Archive/$APPNAME-$APPVERSION.dmg 
+hdiutil create -volname $APPNAME -srcfolder $APPBUNDLE -ov -format UDZO ../Archive/$DMGNAME

@@ -4,8 +4,6 @@ set -e
 
 export APPNAME=KeyPair
 export APPBUNDLE="$APPNAME.app"
-export DMGNAME="$APPNAME-$VERSION.dmg"
-export HTMLNAME="$APPNAME-$VERSION.html"
 
 if [ -d $APPBUNDLE ] 
 then
@@ -16,6 +14,9 @@ else
 fi
 
 export APPVERSION=$(scout read -i $APPBUNDLE/Contents/Info.plist -f plist "CFBundleVersion")
+
+export DMGNAME="$APPNAME-$APPVERSION.dmg"
+export HTMLNAME="$APPNAME-$APPVERSION.html"
 
 echo ""
 echo "Committing latest code changes to Github:"
@@ -40,7 +41,7 @@ echo ""
 echo ""
 echo "Cleaning up:"
 echo ""
-# ./cleanup.sh 
+./cleanup.sh 
 
 echo "Committing latest Appcast to Github:"
 echo ""
