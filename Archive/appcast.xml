@@ -3,12 +3,27 @@
     <channel>
         <title>KeyPair</title>
         <item>
+            <title>1.1.1</title>
+            <pubDate>Fri, 09 Jun 2023 13:16:58 +0200</pubDate>
+            <sparkle:version>1.1.1</sparkle:version>
+            <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
+            <description><![CDATA[<h1>Check for Updates On-Demand</h1>
+]]></description>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair-1.1.1.dmg" length="1173858" type="application/octet-stream" sparkle:edSignature="ePdK4ylG0NIW1tVSrA+Z5XMgfqWNeYCcSyyr3zRhK2VD3X6qrQV+8n/Ct5ZZXXusD++IL9rAScucjgk3SgRcAg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.1-1.1.0.delta" sparkle:deltaFrom="1.1.0" length="32342" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="kQxec891egKVOyzTu16tJkwY8dmcWxfKdZqTOWwwY9PE/6GH/5cq4X13mPYbBV2Fns0BF7uMhKjzOQusceNGCA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.1.0</title>
             <pubDate>Fri, 09 Jun 2023 13:10:45 +0200</pubDate>
             <sparkle:version>1.1.0</sparkle:version>
             <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair-1.1.0.dmg" length="1164948" type="application/octet-stream" sparkle:edSignature="AAmH4KjYq7DXmJRzeFwTWxL51IEZopngworhfQyUDLfU3HaPQs2m2MWGb0BjE3hQLbF9+qmZYKz0roMpIpk5BA=="/>
+            <description><![CDATA[<h1>Auto-Updates Included!</h1>
+]]></description>
         </item>
     </channel>
 </rss>
