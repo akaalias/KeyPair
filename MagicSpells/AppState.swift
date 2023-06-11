@@ -38,13 +38,20 @@ class AppState: ObservableObject, Equatable {
         startAppChangedTimer()
     }
     
+    func getTimestamp() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let timestamp = dateFormatter.string(from: currentDate)
+        return "\(timestamp): "
+    }
+    
     func startAppChangedTimer() {
-        self.log.append("## Started KeyPair\n")
+        self.log.append("\(self.getTimestamp())Started KeyPair\n")
         appChangedTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { _ in
             if let frontmostApp = NSWorkspace.shared.frontmostApplication?.localizedName {
                 if self.currentApp != frontmostApp {
-                    self.log.append("\n")
-                    self.log.append("## Switched from \(self.currentApp) to \(frontmostApp)\n")
+                    self.log.append("\(self.getTimestamp())Switched from \(self.currentApp) to \(frontmostApp)\n")
                     self.currentApp = frontmostApp
                 }
             }
@@ -53,17 +60,19 @@ class AppState: ObservableObject, Equatable {
     
     func appendToLog(s: String) {
         if s.contains(controlKeys) {
-            // Make sure each command is on its own line
-            // So we'll have to add a newline here
             if self.previousInputIsTextInput {
-                self.log.append("\n" + s + "\n")
+                self.log.append("\n\(self.getTimestamp())\(s)\n")
             } else {
-                self.log.append(s + "\n")
+                self.log.append("\(self.getTimestamp())\(s)\n")
             }
             self.previousInputIsTextInput = false
             return
         }
         
+        if !self.previousInputIsTextInput {
+            self.log.append(self.getTimestamp())
+        }
+
         // Else we want to keep the input in the same line
         self.previousInputIsTextInput = true
         
