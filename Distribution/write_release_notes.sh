@@ -8,5 +8,4 @@ $EDITOR ../Archive/$HTMLNAME
 
 echo "Creating HTML for $DMGNAME: $HTMLNAME"
 echo "-----------------------------------"
-cat ../Archive/$HTMLNAME
 echo "-----------------------------------"
