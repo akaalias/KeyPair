@@ -14,7 +14,7 @@ struct LogSettingsView: View {
         VStack {
             HStack {
                 Button {
-                    state.log = ""
+                    state.lines = []
                 } label: {
                     Text("Clear Log")
                 }
@@ -23,7 +23,7 @@ struct LogSettingsView: View {
                 Button {
                     let pasteboard = NSPasteboard.general
                     pasteboard.declareTypes([.string], owner: nil)
-                    pasteboard.setString(state.log, forType: .string)
+                    pasteboard.setString(state.logAsString(), forType: .string)
                 } label: {
                     Text("Copy")
                 }

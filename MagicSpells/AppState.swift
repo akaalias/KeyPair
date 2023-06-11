@@ -18,7 +18,6 @@ class AppState: ObservableObject, Equatable {
     
     @Published var requiresAccessibility = true
     @Published var keyOutput = ""
-    @Published var log = ""
     @Published var currentLogLine = ""
     @Published var currentApp = "KeyPair"
     @Published var lines: [String] = []
