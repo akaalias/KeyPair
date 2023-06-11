@@ -141,6 +141,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             timer = nil
         } else {
             state.appendToLog(s: string)
+            state.printLog()
             queueClear()
         }
     }

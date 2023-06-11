@@ -12,8 +12,6 @@ struct LogSettingsView: View {
     
     var body: some View {
         VStack {
-            TextEditor(text: $state.log)
-            
             HStack {
                 Button {
                     state.log = ""
