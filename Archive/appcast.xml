@@ -3,6 +3,23 @@
     <channel>
         <title>KeyPair</title>
         <item>
+            <title>1.1.6</title>
+            <pubDate>Sun, 11 Jun 2023 16:51:03 +0200</pubDate>
+            <sparkle:version>1.1.6</sparkle:version>
+            <sparkle:shortVersionString>1.1.6</sparkle:shortVersionString>
+            <description><![CDATA[<h1>Adds timestamps to log</h1>
+]]></description>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair-1.1.6.dmg" length="1210622" type="application/octet-stream" sparkle:edSignature="SqCEYp4BVWobMNHNgTV60lPQ6yyyc2AKk1q9FZm2e73IILPVxslaYGL982HDvgeFqocmzbokDmnJ6tDZu9veDw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.6-1.1.5.delta" sparkle:deltaFrom="1.1.5" length="29882" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="OrzZo2aL5pO/SPEJkcGWwK5AvU3ZkdMQueRQWZFe/BusZMKPOUNqAaszWbG6+nTMNITktI7gl+7lTqrJc91IBA=="/>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.6-1.1.4.delta" sparkle:deltaFrom="1.1.4" length="57522" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="fsL2jYH2vDeQt25EjG7KhL0T7d69uynjDj/2PhXQ0i/b74eLSLGuXRU2EykKxgfH/wyL1HjVM2LMNrbjc3bEAg=="/>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.6-1.1.3.delta" sparkle:deltaFrom="1.1.3" length="59106" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="Y8zMYKCrs6I8bzwWOUBIGFO3vpRPIAPuA9fPelAdrk3Qc06FNhCP36mjfSMFq7yQdbTfHeoalTtBYRz5uSBZCg=="/>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.6-1.1.2.delta" sparkle:deltaFrom="1.1.2" length="58778" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="CWzhmw8gkMyGl351KWEaYZDJjlveJjDQWO8t+Scpt8aCeng9MlIoWluNDL/Vmm0H/jwkvmjbSoMZyeySUsagDQ=="/>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.6-1.1.1.delta" sparkle:deltaFrom="1.1.1" length="60262" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="YFq8Pj9fryp+RzPwhwBYHJD0cxnMRwQg3Z3YC5M+3lvF8KAAoPnj9m5yovaTokdFkEr2YWfBR7YxbnSdxq+QDg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.1.5</title>
             <pubDate>Sun, 11 Jun 2023 16:34:54 +0200</pubDate>
             <sparkle:version>1.1.5</sparkle:version>
@@ -38,21 +55,6 @@
                 <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.4-1.1.2.delta" sparkle:deltaFrom="1.1.2" length="26910" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="37ZHPAAtcW2FO6lgSOno6qbjhhFBpf5cQNS7QXmz3/wl6uqkO204jbNIqNdZ0CSahVBYRQzg25kmGpyIR9vSBg=="/>
                 <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.4-1.1.1.delta" sparkle:deltaFrom="1.1.1" length="22054" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="Ns0IsVYdCOx2QvICnCQcnzdMLEPQ75myYzlL2EjoNDXOP1FUh8OorfkzLfe2Llp7W2+IFBUexUDxguLOECM7Dg=="/>
                 <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.4-1.1.0.delta" sparkle:deltaFrom="1.1.0" length="35766" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="tKjOEgp1/jP193npQbD25ni9xzf9bMGFuDlGGDfwLVEEiQfRDm/Yqo2W/gz0iqTo5q5clObles+wT578aA2qDQ=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.1.3</title>
-            <pubDate>Fri, 09 Jun 2023 13:32:09 +0200</pubDate>
-            <sparkle:version>1.1.3</sparkle:version>
-            <sparkle:shortVersionString>1.1.3</sparkle:shortVersionString>
-            <description><![CDATA[Fixes sandbox restriction for automatic updates
-]]></description>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair-1.1.3.dmg" length="1174947" type="application/octet-stream" sparkle:edSignature="tJUn6nj+4rClnOsoSV4JonmLqz6WvdqU5lb5p/45n1q7vG1DwCDMbNZXtoms2Ad6+hY6swRGqO9/WiD3F5WuCQ=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.3-1.1.2.delta" sparkle:deltaFrom="1.1.2" length="11398" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="UjohjrUcnkxBhY+SeiL/UxplqS4KOj6dJazdtONx0P5beGGhUzy71FAI3Tc50U4uwuy85xyeJMZzqst50LzvAg=="/>
-                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.3-1.1.1.delta" sparkle:deltaFrom="1.1.1" length="27438" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="bOr/ipuJ6Cwjbe3OBxmWeRrxAaUx38Q2bHomCgNU33LbeFLphAXqv3B1WPLrprSyZ/HUgIgA9SI2DOqXSWqfCw=="/>
-                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.3-1.1.0.delta" sparkle:deltaFrom="1.1.0" length="36014" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="vgxZjSu0Xdls72oitDCjaGUoKKGr06bfZpIafTECxC2TFZyf+GveYCGFp8mykWkOajLB0TlL9w5hHc3hRmNnAg=="/>
             </sparkle:deltas>
         </item>
     </channel>
