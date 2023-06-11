@@ -3,6 +3,28 @@
     <channel>
         <title>KeyPair</title>
         <item>
+            <title>1.1.5</title>
+            <pubDate>Sun, 11 Jun 2023 16:34:54 +0200</pubDate>
+            <sparkle:version>1.1.5</sparkle:version>
+            <sparkle:shortVersionString>1.1.5</sparkle:shortVersionString>
+            <description><![CDATA[<h1>Adds basic logging</h1>
+
+<p>
+  Important: This release adds local key-logging by default because I want to see if I can keep it running in the background, then share the log with ChatGPT to see if it can give me feedback on my usage.
+
+  </p>
+]]></description>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair-1.1.5.dmg" length="1208154" type="application/octet-stream" sparkle:edSignature="gpU4A4Vqa7pPuqx8g45vht6KtjKU6sZKdNnZ56RQvlGtN6CgmCP9nrPDaRelOkSWM163kIEABK8qzAIxYcHxBg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.5-1.1.4.delta" sparkle:deltaFrom="1.1.4" length="56138" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="IvpAkXx5Ssvp7Jjfuk1sfenkmVufM57es8/RzgP/GThEg4aigJswEYe4zuuChs8VqqDoI9Cq/nfsKdPy54G/Dw=="/>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.5-1.1.3.delta" sparkle:deltaFrom="1.1.3" length="58202" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="/oHKIGJepfg/p1+D2wglEP47R5DiLJULtdjh3WQrm2j9W2eClSJAC3ve5QK+u6Ekxc73uwN3/DuiLrgr/pjbBw=="/>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.5-1.1.2.delta" sparkle:deltaFrom="1.1.2" length="57902" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="biGvAOTNMi3Yt8YmpFuIABcJj4ZC70gyvqTIHDmbCUH/SShwfgIRrNPMQrCElsMNg+iAKlYLzVOHOqs2xuL1Bg=="/>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.5-1.1.1.delta" sparkle:deltaFrom="1.1.1" length="58822" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="U6EYqXmlB6WD/t0xpAbtBiiCmv/jlK/hWgYyfOvO1eP/vt9+Fh4UQYi+XecYQrhAePsorVBUMyzylU1YteGcCg=="/>
+                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.5-1.1.0.delta" sparkle:deltaFrom="1.1.0" length="63490" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="D3BwRUMWj9HJ7J3GvTxVeY0F+sIG3syvBjypp9LR6/csG8NHKfmist8kmsfXn+fbYDJ0plcJlHH0jgzT+7bPAQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.1.4</title>
             <pubDate>Fri, 09 Jun 2023 13:36:38 +0200</pubDate>
             <sparkle:version>1.1.4</sparkle:version>
@@ -31,20 +53,6 @@
                 <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.3-1.1.2.delta" sparkle:deltaFrom="1.1.2" length="11398" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="UjohjrUcnkxBhY+SeiL/UxplqS4KOj6dJazdtONx0P5beGGhUzy71FAI3Tc50U4uwuy85xyeJMZzqst50LzvAg=="/>
                 <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.3-1.1.1.delta" sparkle:deltaFrom="1.1.1" length="27438" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="bOr/ipuJ6Cwjbe3OBxmWeRrxAaUx38Q2bHomCgNU33LbeFLphAXqv3B1WPLrprSyZ/HUgIgA9SI2DOqXSWqfCw=="/>
                 <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.3-1.1.0.delta" sparkle:deltaFrom="1.1.0" length="36014" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="vgxZjSu0Xdls72oitDCjaGUoKKGr06bfZpIafTECxC2TFZyf+GveYCGFp8mykWkOajLB0TlL9w5hHc3hRmNnAg=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.1.2</title>
-            <pubDate>Fri, 09 Jun 2023 13:22:06 +0200</pubDate>
-            <sparkle:version>1.1.2</sparkle:version>
-            <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
-            <description><![CDATA[Centers Text
-]]></description>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair-1.1.2.dmg" length="1174505" type="application/octet-stream" sparkle:edSignature="9anXJyad2JXbjS5427QPldhT/5mLyq+V6UE4Umk7PG2N7EuCrbuKc+kdt6pdiWw/qrvsIYmtVbEUfKP6O65nCw=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.2-1.1.1.delta" sparkle:deltaFrom="1.1.1" length="27446" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="w0HT92Nk+BQxb60ztZiSvh4GrqoR1nM2QYV0ZgMmlK91+DbJD7/gPKf8bzXXM7xOD+UYiAD+4+zq+UOJfHqjCg=="/>
-                <enclosure url="https://raw.githubusercontent.com/akaalias/KeyPair/main/Archive/KeyPair1.1.2-1.1.0.delta" sparkle:deltaFrom="1.1.0" length="35718" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865040" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="4RS+Re6GXnTunRWSfSkbsgIvtVRE9Days0pL+Rx6B1b2i3umNexLmh24tIYzDJ0U/65Zl9sOeTKHyT4j/IUcAg=="/>
             </sparkle:deltas>
         </item>
     </channel>
