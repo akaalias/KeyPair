@@ -36,7 +36,7 @@ struct MagicSpellsApp: App {
                     }
             }
             .padding()
-            .frame(width: 400, height: 200)
+            .frame(width: 600, height: 400)
         }
     }
 }

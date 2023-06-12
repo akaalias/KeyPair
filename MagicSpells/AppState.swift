@@ -10,11 +10,13 @@ import SwiftUI
 
 enum SettingsKeys: String, CaseIterable{
     case isPinned = "isPinned"
+    case keyCombinationsOnly = "keyCombinationsOnly"
 }
 
 class AppState: ObservableObject, Equatable {
     static let shared = AppState()
     static let DEFAULT_IS_PINNED_STATE = true
+    static let DEFAULT_KEY_COMBINATIONS_ONLY = true
     
     @Published var requiresAccessibility = true
     @Published var keyOutput = ""
@@ -33,7 +35,12 @@ class AppState: ObservableObject, Equatable {
             objectWillChange.send()
         }
     }
-    var appChangedTimer = Timer()
+
+    @AppStorage(SettingsKeys.keyCombinationsOnly.rawValue) var keyCombinationsOnly = AppState.DEFAULT_KEY_COMBINATIONS_ONLY {
+        didSet {
+            objectWillChange.send()
+        }
+    }
     
     init() {
         self.addNewLogLineWithTimestamp(s: "Started KeyPair")
@@ -43,12 +50,8 @@ class AppState: ObservableObject, Equatable {
         startObservingWorkspace()
     }
     
-    func getTimestamp() -> String {
-        let currentDate = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let timestamp = dateFormatter.string(from: currentDate)
-        return "\(timestamp): "
+    func getUnixTimestamp() -> Int {
+        return Int(NSDate().timeIntervalSince1970)
     }
     
     func startObservingWorkspace() {        
@@ -112,7 +115,9 @@ class AppState: ObservableObject, Equatable {
             self.shouldAddNewline = true
             return
         }
-        self.addToExistingLastLogLine(additionalString: s)
+        if !self.keyCombinationsOnly {
+            self.addToExistingLastLogLine(additionalString: s)
+        }
     }
 
     func printLog() {
@@ -122,12 +127,12 @@ class AppState: ObservableObject, Equatable {
     }
     
     func addNewLogLineWithTimestamp(s: String) {
-        self.lines.append("\(self.getTimestamp())\t\(s)")
+        self.lines.append("\(self.getUnixTimestamp())\t\(s)")
     }
 
     func addToExistingLastLogLine(additionalString: String) {
         if shouldAddNewline {
-            self.lines.append("\(self.getTimestamp())\t\(additionalString)")
+            self.lines.append("\(self.getUnixTimestamp())\t\(additionalString)")
             shouldAddNewline = false
         } else {
             let count = self.lines.count

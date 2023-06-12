@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var eventTap: CFMachPort?
     weak var timer: Timer?
     let delay: Double = 0.7
-    let keyCombinationsOnly: Bool = false
     
     func applicationDidFinishLaunching(_ notification: Notification) {
         if !AXIsProcessTrustedWithOptions(["AXTrustedCheckOptionPrompt": true] as CFDictionary) {
@@ -107,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     }
                 } else if keyDown {
                     DispatchQueue.main.async {
-                        self.updateText(getKeyPressText(event, keyCombinationsOnly: self.keyCombinationsOnly))
+                        self.updateText(getKeyPressText(event, keyCombinationsOnly: self.state.keyCombinationsOnly))
                     }
                 }
             }
@@ -314,7 +313,6 @@ func getKeyPressText(_ event: NSEvent, keyCombinationsOnly: Bool) -> String {
         }
     }
     
-    // Don't log simple keypresses (no modifiers). Only accelerators.
     if text.count == 0 && keyCombinationsOnly {
         return ""
     }

@@ -12,14 +12,16 @@ struct LogSettingsView: View {
     
     var body: some View {
         VStack {
+            
+            Toggle("Log Key Combinations Only", isOn: state.$keyCombinationsOnly)
+            
+            Spacer()
+            
             HStack {
-                Button {
-                    state.lines = []
-                } label: {
-                    Text("Clear Log")
-                }
-                
                 Spacer()
+
+                Text("\(state.lines.count) lines logged")
+
                 Button {
                     let pasteboard = NSPasteboard.general
                     pasteboard.declareTypes([.string], owner: nil)
@@ -28,7 +30,18 @@ struct LogSettingsView: View {
                     Text("Copy")
                 }
                 .buttonStyle(.borderedProminent)
+
+                Button {
+                    state.lines = []
+                } label: {
+                    Text("Clear Log")
+                }
+                                
+                Spacer()
             }
+            
+            Spacer()
+
         }
         .padding()
     }
