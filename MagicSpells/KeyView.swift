@@ -10,25 +10,23 @@ import SwiftUI
 struct KeyView: View {
     let key: String.SubSequence
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 8)
-                .frame(width: 64, height: 64)
-                .background(RoundedRectangle(cornerRadius: 8)
-                    .fill(Color("KeyColor")))
-            
-            Text(self.key)
-                .foregroundColor(Color("KeyTextColor"))
-        }
         Text(key)
-        .transition(.opacity)
-        .animation(.easeOut(duration: 0.5))
-        .shadow(radius: 10)
+            .font(.title)
+            .padding(16)
+            .foregroundColor(Color("KeyTextColor"))
+            .frame(width: 64, height: 64)
+            .background(RoundedRectangle(cornerRadius: 8)
+                .fill(Color("KeyColor")))
+            .transition(.opacity)
+            .animation(.easeOut(duration: 0.5))
+            .shadow(radius: 10)
     }
     
     func isSpecialKey() -> Bool {
-        if ["⌘","⇧","⌃","⌥"].contains(String(self.key)) {
+        if String(self.key) == "⌘" {
             return true
         }
+        
         return false
     }
 }
