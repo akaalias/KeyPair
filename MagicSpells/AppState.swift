@@ -10,20 +10,25 @@ import SwiftUI
 
 enum SettingsKeys: String, CaseIterable{
     case isPinned = "isPinned"
-    case keyCombinationsOnly = "keyCombinationsOnly"
+    case logControlKeyCombinationsOnly = "logControlKeyCombinationsOnly"
+    case logContextSwitches = "logContextSwitches"
+    case logAnything = "logAnything"
 }
 
 class AppState: ObservableObject, Equatable {
     static let shared = AppState()
     static let DEFAULT_IS_PINNED_STATE = true
-    static let DEFAULT_KEY_COMBINATIONS_ONLY = true
+    
+    static let DEFAULT_LOG_CONTROL_KEY_COMBINATIONS_ONLY = true
+    static let DEFAULT_LOG_CONTEXT_SWITCHES = true
+    static let DEFAULT_LOG_ANYTHING = false
     
     @Published var requiresAccessibility = true
     @Published var keyOutput = ""
     @Published var currentLogLine = ""
     @Published var currentApp = "KeyPair"
     @Published var lines: [String] = []
-
+    
     var shouldAddNewline = false
     
     static func == (lhs: AppState, rhs: AppState) -> Bool {
@@ -35,8 +40,20 @@ class AppState: ObservableObject, Equatable {
             objectWillChange.send()
         }
     }
-
-    @AppStorage(SettingsKeys.keyCombinationsOnly.rawValue) var keyCombinationsOnly = AppState.DEFAULT_KEY_COMBINATIONS_ONLY {
+    
+    @AppStorage(SettingsKeys.logControlKeyCombinationsOnly.rawValue) var logControlKeyCombinationsOnly = AppState.DEFAULT_LOG_CONTROL_KEY_COMBINATIONS_ONLY {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    
+    @AppStorage(SettingsKeys.logContextSwitches.rawValue) var logContextSwitches = AppState.DEFAULT_LOG_CONTEXT_SWITCHES {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    
+    @AppStorage(SettingsKeys.logAnything.rawValue) var logAnything = AppState.DEFAULT_LOG_ANYTHING {
         didSet {
             objectWillChange.send()
         }
@@ -54,33 +71,36 @@ class AppState: ObservableObject, Equatable {
         return Int(NSDate().timeIntervalSince1970)
     }
     
-    func startObservingWorkspace() {        
-        let workspace = NSWorkspace.shared
-        
-        workspace.notificationCenter.addObserver(self,
-                                                 selector: #selector(self.didActivateApplicationNotification),
-                                                 name: NSWorkspace.didActivateApplicationNotification,
-                                                 object: workspace)
-
-        workspace.notificationCenter.addObserver(self,
-                                                 selector: #selector(self.sessionDidBecomeActiveNotification),
-                                                 name: NSWorkspace.sessionDidBecomeActiveNotification,
-                                                 object: workspace)
-
-        workspace.notificationCenter.addObserver(self,
-                                                 selector: #selector(self.sessionDidResignActiveNotification),
-                                                 name: NSWorkspace.sessionDidResignActiveNotification,
-                                                 object: workspace)
-
-        workspace.notificationCenter.addObserver(self,
-                                                 selector: #selector(self.screensDidWakeNotification),
-                                                 name: NSWorkspace.screensDidWakeNotification,
-                                                 object: workspace)
-
-        workspace.notificationCenter.addObserver(self,
-                                                 selector: #selector(self.screensDidSleepNotification),
-                                                 name: NSWorkspace.screensDidSleepNotification,
-                                                 object: workspace)
+    func startObservingWorkspace() {
+        if self.logContextSwitches {
+            let workspace = NSWorkspace.shared
+            
+            workspace.notificationCenter.addObserver(self,
+                                                     selector: #selector(self.didActivateApplicationNotification),
+                                                     name: NSWorkspace.didActivateApplicationNotification,
+                                                     object: workspace)
+            
+            workspace.notificationCenter.addObserver(self,
+                                                     selector: #selector(self.sessionDidBecomeActiveNotification),
+                                                     name: NSWorkspace.sessionDidBecomeActiveNotification,
+                                                     object: workspace)
+            
+            workspace.notificationCenter.addObserver(self,
+                                                     selector: #selector(self.sessionDidResignActiveNotification),
+                                                     name: NSWorkspace.sessionDidResignActiveNotification,
+                                                     object: workspace)
+            
+            workspace.notificationCenter.addObserver(self,
+                                                     selector: #selector(self.screensDidWakeNotification),
+                                                     name: NSWorkspace.screensDidWakeNotification,
+                                                     object: workspace)
+            
+            workspace.notificationCenter.addObserver(self,
+                                                     selector: #selector(self.screensDidSleepNotification),
+                                                     name: NSWorkspace.screensDidSleepNotification,
+                                                     object: workspace)
+            
+        }
     }
     
     @objc private func screensDidSleepNotification(notification: NSNotification) {
@@ -94,7 +114,7 @@ class AppState: ObservableObject, Equatable {
     @objc private func sessionDidResignActiveNotification(notification: NSNotification) {
         addNewLogLineWithTimestamp(s: "sessionDidResignActiveNotification")
     }
-
+    
     @objc private func sessionDidBecomeActiveNotification(notification: NSNotification) {
         addNewLogLineWithTimestamp(s: "sessionDidBecomeActiveNotification")
     }
@@ -115,11 +135,11 @@ class AppState: ObservableObject, Equatable {
             self.shouldAddNewline = true
             return
         }
-        if !self.keyCombinationsOnly {
+        if !self.logControlKeyCombinationsOnly {
             self.addToExistingLastLogLine(additionalString: s)
         }
     }
-
+    
     func printLog() {
         print("------------")
         print(self.logAsString())
@@ -129,7 +149,7 @@ class AppState: ObservableObject, Equatable {
     func addNewLogLineWithTimestamp(s: String) {
         self.lines.append("\(self.getUnixTimestamp())\t\(s)")
     }
-
+    
     func addToExistingLastLogLine(additionalString: String) {
         if shouldAddNewline {
             self.lines.append("\(self.getUnixTimestamp())\t\(additionalString)")
@@ -148,7 +168,7 @@ class AppState: ObservableObject, Equatable {
             shouldAddNewline = false
         }
     }
-        
+    
     func logAsString() -> String {
         return self.lines.joined(separator: "\n")
     }

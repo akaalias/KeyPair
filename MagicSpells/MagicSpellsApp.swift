@@ -26,17 +26,22 @@ struct MagicSpellsApp: App {
         
         Settings {
             TabView {
-                UpdaterSettingsView(updater: updaterController.updater)
-                    .tabItem {
-                        Label("Updates", systemImage: "arrow.clockwise")
-                    }
                 LogSettingsView()
                     .tabItem {
                         Label("Log", systemImage: "text.line.last.and.arrowtriangle.forward")
                     }
+                UpdaterSettingsView(updater: updaterController.updater)
+                    .tabItem {
+                        Label("Updates", systemImage: "arrow.clockwise")
+                    }
+                AboutSettingsView()
+                    .tabItem {
+                        Label("About", systemImage: "hand.wave")
+                    }
+
             }
             .padding()
-            .frame(width: 600, height: 400)
+            .frame(width: 600, height: 500)
         }
     }
 }

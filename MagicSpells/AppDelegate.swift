@@ -105,8 +105,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         self.updateText(text, onlyMeta: true)
                     }
                 } else if keyDown {
-                    DispatchQueue.main.async {
-                        self.updateText(getKeyPressText(event, keyCombinationsOnly: self.state.keyCombinationsOnly))
+                    if self.state.logAnything {
+                        DispatchQueue.main.async {
+                            self.updateText(getKeyPressText(event, keyCombinationsOnly: self.state.logControlKeyCombinationsOnly))
+                        }
                     }
                 }
             }

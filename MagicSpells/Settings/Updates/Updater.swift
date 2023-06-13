@@ -49,7 +49,11 @@ struct UpdaterSettingsView: View {
     
     var body: some View {
         VStack {
-            AboutSettingsView()
+                        
+            Text("Release Version: \(Bundle.main.releaseVersionNumber!)")
+            Text("Build Version: \(Bundle.main.buildVersionNumber!)")
+            
+            Divider()
             
             Toggle("Automatically check for updates", isOn: $automaticallyChecksForUpdates)
                 .onChange(of: automaticallyChecksForUpdates) { newValue in
@@ -63,6 +67,7 @@ struct UpdaterSettingsView: View {
                 }
             
             CheckForUpdatesView(updater: updater)
+            
         }.padding()
     }
 }

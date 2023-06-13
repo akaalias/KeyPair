@@ -10,8 +10,13 @@ import SwiftUI
 struct AboutSettingsView: View {
     var body: some View {
         VStack {
-            Text("Release Version: \(Bundle.main.releaseVersionNumber!)")
-            Text("Build Version: \(Bundle.main.buildVersionNumber!)")
+            Text("KeyPair")
+                .font(.largeTitle)
+                .padding(8)
+
+            Text("KeyPair is [free and open software](https://github.com/akaalias/keypair) made with ❤️ by [Alexis Rondeau](https://alexisrondeau.me)")
+                .font(.body)
+                .padding(8)
         }
     }
 }

@@ -22,12 +22,12 @@ struct ContentView: View {
             }
             
             if state.requiresAccessibility {
-                VStack {
+                VStack(alignment: .leading) {
                     Text("Please Enable Accessibility for KeyPair")
                         .font(.title)
-                    Text("Open System Settings > Security & Privacy > Accessibility")
-                    Text("Then Add KeyPair")
-                    Text("Finally, restart the app")
+                    Text("1. Open System Settings > Security & Privacy > Accessibility")
+                    Text("2. Click on '+' and add KeyPair")
+                    Text("3. Finally, restart the app")
                 }
             }
         }

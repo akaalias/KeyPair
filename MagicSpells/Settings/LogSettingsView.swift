@@ -9,41 +9,31 @@ import SwiftUI
 
 struct LogSettingsView: View {
     @ObservedObject var state = AppState.shared
+    @State var showLogSettingsDetailsView = false
     
     var body: some View {
-        VStack {
-            
-            Toggle("Log Key Combinations Only", isOn: state.$keyCombinationsOnly)
-            
-            Spacer()
-            
-            HStack {
-                Spacer()
+        VStack(alignment: .leading) {
 
-                Text("\(state.lines.count) lines logged")
+            Toggle("Log Anything At All", isOn: state.$logAnything)
+            Text("When enabled, will capture a local-only, in-memory timestamped log your keyboard input and context switches. You can customize what it logs, too.\n\nWhy? This is part of a personal experiment where I feed the log to ChatGPT to gain deeper insights into my day-to-day work.")
+                .font(.body)
+                .opacity(0.8)
 
-                Button {
-                    let pasteboard = NSPasteboard.general
-                    pasteboard.declareTypes([.string], owner: nil)
-                    pasteboard.setString(state.logAsString(), forType: .string)
-                } label: {
-                    Text("Copy")
-                }
-                .buttonStyle(.borderedProminent)
-
-                Button {
-                    state.lines = []
-                } label: {
-                    Text("Clear Log")
-                }
-                                
-                Spacer()
+            if showLogSettingsDetailsView {
+                LogSettingsDetailsView()
             }
             
-            Spacer()
+            LogExportsView()
 
+            Spacer()
         }
         .padding()
+        .onAppear() {
+            self.showLogSettingsDetailsView = state.logAnything
+        }
+        .onChange(of: state.logAnything) { newValue in
+            showLogSettingsDetailsView = newValue
+        }
     }
 }
 
