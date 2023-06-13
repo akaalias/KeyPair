@@ -60,11 +60,14 @@ class AppState: ObservableObject, Equatable {
     }
     
     init() {
-        self.addNewLogLineWithTimestamp(s: "Started KeyPair")
-        self.currentApp = "KeyPair"
-        self.shouldAddNewline = true
-        
-        startObservingWorkspace()
+        if self.logAnything {
+            self.addNewLogLineWithTimestamp(s: "Started KeyPair", type: "Context Switch")
+            self.currentApp = "KeyPair"
+            self.shouldAddNewline = true
+            if self.logContextSwitches {
+                self.startObservingWorkspace()
+            }
+        }
     }
     
     func getUnixTimestamp() -> Int {
@@ -72,7 +75,6 @@ class AppState: ObservableObject, Equatable {
     }
     
     func startObservingWorkspace() {
-        if self.logAnything && self.logContextSwitches {
             let workspace = NSWorkspace.shared
             
             workspace.notificationCenter.addObserver(self,
@@ -100,29 +102,29 @@ class AppState: ObservableObject, Equatable {
                                                      name: NSWorkspace.screensDidSleepNotification,
                                                      object: workspace)
             
-        }
+        
     }
     
     @objc private func screensDidSleepNotification(notification: NSNotification) {
-        addNewLogLineWithTimestamp(s: "screensDidSleepNotification")
+        addNewLogLineWithTimestamp(s: "screensDidSleepNotification", type: "Context Switch")
     }
     
     @objc private func screensDidWakeNotification(notification: NSNotification) {
-        addNewLogLineWithTimestamp(s: "screensDidWakeNotification")
+        addNewLogLineWithTimestamp(s: "screensDidWakeNotification", type: "Context Switch")
     }
     
     @objc private func sessionDidResignActiveNotification(notification: NSNotification) {
-        addNewLogLineWithTimestamp(s: "sessionDidResignActiveNotification")
+        addNewLogLineWithTimestamp(s: "sessionDidResignActiveNotification", type: "Context Switch")
     }
     
     @objc private func sessionDidBecomeActiveNotification(notification: NSNotification) {
-        addNewLogLineWithTimestamp(s: "sessionDidBecomeActiveNotification")
+        addNewLogLineWithTimestamp(s: "sessionDidBecomeActiveNotification", type: "Context Switch")
     }
     
     @objc private func didActivateApplicationNotification(notification: NSNotification) {
         if let frontmostApp = NSWorkspace.shared.frontmostApplication?.localizedName {
             if self.currentApp != frontmostApp {
-                self.addNewLogLineWithTimestamp(s: "Switched from \(self.currentApp) to \(frontmostApp)")
+                self.addNewLogLineWithTimestamp(s: "Switched from \(self.currentApp) to \(frontmostApp)", type: "Context Switch")
                 self.printLog()
                 self.currentApp = frontmostApp
             }
@@ -131,7 +133,7 @@ class AppState: ObservableObject, Equatable {
     
     func appendToLog(s: String) {
         if s.contains(controlKeys) {
-            self.addNewLogLineWithTimestamp(s: s)
+            self.addNewLogLineWithTimestamp(s: s, type: "Keyboard Shortcut")
             self.shouldAddNewline = true
             return
         }
@@ -146,13 +148,13 @@ class AppState: ObservableObject, Equatable {
         print("------------")
     }
     
-    func addNewLogLineWithTimestamp(s: String) {
-        self.lines.append("\(self.getUnixTimestamp())\t\(s)")
+    func addNewLogLineWithTimestamp(s: String, type: String) {
+        self.lines.append("\(self.getUnixTimestamp())\t\t\(type)\t\t\(s)")
     }
     
     func addToExistingLastLogLine(additionalString: String) {
         if shouldAddNewline {
-            self.lines.append("\(self.getUnixTimestamp())\t\(additionalString)")
+            self.lines.append("\(self.getUnixTimestamp())\t\tWriting\t\t\(additionalString)")
             shouldAddNewline = false
         } else {
             let count = self.lines.count

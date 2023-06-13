@@ -15,7 +15,7 @@ struct LogSettingsView: View {
         VStack(alignment: .leading) {
 
             Toggle("Log Anything At All", isOn: state.$logAnything)
-            Text("When enabled, will capture a local-only, in-memory timestamped log your keyboard input and context switches. You can customize what it logs, too.\n\nWhy? This is part of a personal experiment where I feed the log to ChatGPT to gain deeper insights into my day-to-day work.")
+            Text("When enabled, will capture a local-only, in-memory timestamped log of your keyboard input and context switches. You can customize what it logs, of course.\n\nWhy? This is part of a personal experiment where I feed the log to ChatGPT to gain deeper insights into my day-to-day work.")
                 .font(.body)
                 .opacity(0.8)
 

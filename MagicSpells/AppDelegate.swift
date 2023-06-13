@@ -67,6 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             CGEvent.tapEnable(tap: self.eventTap!, enable: true)
             CFRunLoopRun()
         }
+        
     }
     
     func keyboardHandler(_ cgEvent: CGEvent) -> Unmanaged<CGEvent>? {
@@ -105,10 +106,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         self.updateText(text, onlyMeta: true)
                     }
                 } else if keyDown {
-                    if self.state.logAnything {
-                        DispatchQueue.main.async {
-                            self.updateText(getKeyPressText(event, keyCombinationsOnly: self.state.logControlKeyCombinationsOnly))
-                        }
+                    DispatchQueue.main.async {
+                        self.updateText(getKeyPressText(event, keyCombinationsOnly: self.state.logControlKeyCombinationsOnly))
                     }
                 }
             }
@@ -141,12 +140,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             timer?.invalidate()
             timer = nil
         } else {
-            state.appendToLog(s: string)
-            state.printLog()
+            if state.logAnything { state.appendToLog(s: string) }
             queueClear()
         }
     }
-
+    
 }
 
 extension String {

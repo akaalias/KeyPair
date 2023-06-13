@@ -14,7 +14,7 @@ struct LogSettingsDetailsView: View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
                 Toggle("Log Control Key Combinations Only", isOn: state.$logControlKeyCombinationsOnly)
-                Text("When enabled, will log only control keys and keyboard shortcuts but not what you write alphanumerically. **Restart KeyPair to apply changes.**")
+                Text("When enabled, will log only control keys and keyboard shortcuts but not what you write alphanumerically.")
                     .multilineTextAlignment(.leading)
                     .font(.body)
                     .opacity(0.8)
