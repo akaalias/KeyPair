@@ -72,7 +72,7 @@ class AppState: ObservableObject, Equatable {
     }
     
     func startObservingWorkspace() {
-        if self.logContextSwitches {
+        if self.logAnything && self.logContextSwitches {
             let workspace = NSWorkspace.shared
             
             workspace.notificationCenter.addObserver(self,
