@@ -18,7 +18,7 @@ struct MagicSpellsApp: App {
     }
     
     var body: some Scene {
-        WindowGroup {
+        Window("KeyPair", id: "KeyPair") {
             ContentView()
                 .frame(minWidth: 400, minHeight: 100)
                 .ignoresSafeArea()

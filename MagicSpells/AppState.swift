@@ -165,8 +165,12 @@ class AppState: ObservableObject, Equatable {
                 replacedString = " "
             }
             
-            let newText = currentLastText! + replacedString
-            self.lines[count - 1] = newText
+            if currentLastText != nil {
+                let newText = currentLastText! + replacedString
+                self.lines[count - 1] = newText
+            } else {
+                self.lines[count - 1] = replacedString
+            }
             shouldAddNewline = false
         }
     }
