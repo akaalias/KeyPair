@@ -11,9 +11,9 @@ So, the app I made is a small window that shows when the driver uses any keyboar
 
 From simple things like Command-C/Command-V for copy and paste to complex commands like Command-shift-enter for code refactoring in IntelliJ. 
 
-## Demo
+## Accessibility Settings
 
-![KeyPairDemo.gif](./KeyPairEmacs.gif)
+https://github.com/akaalias/KeyPair/assets/111555/2b0629af-0c4b-4c66-ba9c-052869628a5b
 
 ## Reference and License
 - The main global key monitor that works with Accessibility _and_ keeping the Sandbox intact for notarization by Apple was developed by @karaggeorge in their [key-cast](https://github.com/karaggeorge/macos-key-cast/blob/master/Sources/key-cast/KeyCast.swift) project. As their project is MIT licensed (and their code does the heavy-lifting here), this project is also MIT licensed and public.
