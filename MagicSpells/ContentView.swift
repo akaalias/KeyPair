@@ -30,15 +30,13 @@ struct ContentView: View {
                     Text("To visualize your key presses, please add KeyPair to Accessibility as follows:")
                         .multilineTextAlignment(.leading)
                         .font(.title2)
-
-                        Text("1. Open System Settings > Security & Privacy > Accessibility")
-                        Text("2. Click on '+' and add KeyPair")
-                        Text("3. Finally, restart KeyPair")
                     
-                    if let url = Bundle.main.url(forResource: "accessibility-settings", withExtension: "mp4") {
-                        VideoPlayer(player: AVPlayer(url: url))
-                            .frame(width: 480)
-                    }
+                    Text("1. Open System Settings > Security & Privacy > Accessibility")
+                    Text("2. Click on '+' and add KeyPair")
+                    Text("3. Finally, restart KeyPair")
+                    
+                    Link("Learn SwiftUI", destination: URL(string: "https://www.hackingwithswift.com/quick-start/swiftui")!)
+
                 }
                 .padding()
             }
