@@ -26,16 +26,17 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     Text("Welcome to KeyPair!")
                         .font(.title)
-                    Divider()
-                    Text("To visualize your key presses, please add KeyPair to Accessibility as follows:")
+                    Text("Please update Accessiblity: ")
                         .multilineTextAlignment(.leading)
                         .font(.title2)
                     
                     Text("1. Open System Settings > Security & Privacy > Accessibility")
-                    Text("2. Click on '+' and add KeyPair")
-                    Text("3. Finally, restart KeyPair")
+                    Text("2. Click on '+' and add Applications > KeyPair")
+                    Text("3. Restart KeyPair")
                     
-                    Link("Learn SwiftUI", destination: URL(string: "https://www.hackingwithswift.com/quick-start/swiftui")!)
+                    Link("Watch the Accessiblity Settings How-To Video Here", destination: URL(string: "https://github.com/akaalias/KeyPair/tree/main#accessibility-settings")!)
+                        .tint(.orange)
+                        .foregroundColor(.orange)
 
                 }
                 .padding()
