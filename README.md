@@ -1,5 +1,7 @@
 # KeyPair makes using keyboard shortcuts for pair programming sessions easier
 
+https://github.com/akaalias/KeyPair/assets/111555/7fbafcf4-c90b-442a-a5ba-18a2692479cf
+
 [🎁 Download KeyPair!](https://github.com/akaalias/keypair/releases/latest/download/KeyPair.dmg)
 
 ## The problem with hotkeys and pair programming
