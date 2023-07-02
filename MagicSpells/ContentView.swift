@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ContentView: View {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -23,12 +24,23 @@ struct ContentView: View {
             
             if state.requiresAccessibility {
                 VStack(alignment: .leading) {
-                    Text("Please Enable Accessibility for KeyPair")
+                    Text("Welcome to KeyPair!")
                         .font(.title)
-                    Text("1. Open System Settings > Security & Privacy > Accessibility")
-                    Text("2. Click on '+' and add KeyPair")
-                    Text("3. Finally, restart the app")
+                    Divider()
+                    Text("To visualize your key presses, please add KeyPair to Accessibility as follows:")
+                        .multilineTextAlignment(.leading)
+                        .font(.title2)
+
+                        Text("1. Open System Settings > Security & Privacy > Accessibility")
+                        Text("2. Click on '+' and add KeyPair")
+                        Text("3. Finally, restart KeyPair")
+                    
+                    if let url = Bundle.main.url(forResource: "accessibility-settings", withExtension: "mp4") {
+                        VideoPlayer(player: AVPlayer(url: url))
+                            .frame(width: 480)
+                    }
                 }
+                .padding()
             }
         }
         .animation(.easeInOut(duration: 1))

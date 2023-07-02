@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562EB09A2A518776002368F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 562EB0992A518776002368F4 /* README.md */; };
+		564D1C632A518A0A00DE831A /* accessibility-settings.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 564D1C622A518A0A00DE831A /* accessibility-settings.mp4 */; };
 		566BAE262A38C7CA003BD40C /* LogSettingsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566BAE252A38C7CA003BD40C /* LogSettingsDetailsView.swift */; };
 		566BAE282A38CD6A003BD40C /* LogExportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566BAE272A38CD6A003BD40C /* LogExportsView.swift */; };
 		5673F3F52A35F97A00F7F769 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673F3F42A35F97A00F7F769 /* KeyView.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		562EB0992A518776002368F4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		564D1C622A518A0A00DE831A /* accessibility-settings.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "accessibility-settings.mp4"; sourceTree = "<group>"; };
 		566BAE252A38C7CA003BD40C /* LogSettingsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSettingsDetailsView.swift; sourceTree = "<group>"; };
 		566BAE272A38CD6A003BD40C /* LogExportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogExportsView.swift; sourceTree = "<group>"; };
 		5673F3F42A35F97A00F7F769 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
@@ -55,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		564D1C612A5189FA00DE831A /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				564D1C622A518A0A00DE831A /* accessibility-settings.mp4 */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
 		5673F4002A35FC6300F7F769 /* Updates */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +107,7 @@
 		56D1ACFC2A2C022600F5D939 /* MagicSpells */ = {
 			isa = PBXGroup;
 			children = (
+				564D1C612A5189FA00DE831A /* Media */,
 				5673F4012A35FC7900F7F769 /* Settings */,
 				5673F3FA2A35F9CC00F7F769 /* AppDelegate.swift */,
 				56D1ACFF2A2C022600F5D939 /* MagicSpellsApp.swift */,
@@ -105,6 +118,7 @@
 				56D1AD012A2C022700F5D939 /* Assets.xcassets */,
 				56D1AD062A2C022700F5D939 /* MagicSpells.entitlements */,
 				56D1AD032A2C022700F5D939 /* Preview Content */,
+				562EB0992A518776002368F4 /* README.md */,
 			);
 			path = MagicSpells;
 			sourceTree = "<group>";
@@ -183,6 +197,8 @@
 			files = (
 				56EF360A2A333CBD00634FF0 /* KeyPair-Info.plist in Resources */,
 				56D1AD052A2C022700F5D939 /* Preview Assets.xcassets in Resources */,
+				564D1C632A518A0A00DE831A /* accessibility-settings.mp4 in Resources */,
+				562EB09A2A518776002368F4 /* README.md in Resources */,
 				56D1AD022A2C022700F5D939 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +348,7 @@
 				CODE_SIGN_ENTITLEMENTS = MagicSpells/MagicSpells.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.2.7;
+				CURRENT_PROJECT_VERSION = 1.2.8;
 				DEVELOPMENT_ASSET_PATHS = "\"MagicSpells/Preview Content\"";
 				DEVELOPMENT_TEAM = HKQARCV8QZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -346,7 +362,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rondeau.MagicSpells;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -362,7 +378,7 @@
 				CODE_SIGN_ENTITLEMENTS = MagicSpells/MagicSpells.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.2.7;
+				CURRENT_PROJECT_VERSION = 1.2.8;
 				DEVELOPMENT_ASSET_PATHS = "\"MagicSpells/Preview Content\"";
 				DEVELOPMENT_TEAM = HKQARCV8QZ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -376,7 +392,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rondeau.MagicSpells;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

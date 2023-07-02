@@ -23,7 +23,13 @@ struct MagicSpellsApp: App {
                 .frame(minWidth: 400, minHeight: 100)
                 .ignoresSafeArea()
         }
-        
+        .defaultSize(width: 650, height: 600)
+        .commands {
+            CommandGroup(after: .appInfo) {
+                CheckForUpdatesView(updater: updaterController.updater)
+            }
+        }
+
         Settings {
             TabView {
                 LogSettingsView()
